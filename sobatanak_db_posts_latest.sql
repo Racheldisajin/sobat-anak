@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS sobatanak_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE sobatanak_db;
 SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS product_reviews;
+DROP TABLE IF EXISTS user_addresses;
 DROP TABLE IF EXISTS reward_claims;
 DROP TABLE IF EXISTS cart_items;
 DROP TABLE IF EXISTS user_points;
@@ -24,6 +26,9 @@ CREATE TABLE rewards (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,name VARCHAR
 CREATE TABLE user_points (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,user_id BIGINT UNSIGNED NOT NULL,points INT NOT NULL DEFAULT 1250,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL,CONSTRAINT user_points_user_id_foreign FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 CREATE TABLE cart_items (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,user_id BIGINT UNSIGNED NOT NULL,product_id BIGINT UNSIGNED NOT NULL,quantity INT NOT NULL DEFAULT 1,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL,UNIQUE KEY cart_user_product_unique (user_id,product_id),CONSTRAINT cart_items_user_id_foreign FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,CONSTRAINT cart_items_product_id_foreign FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 CREATE TABLE reward_claims (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,user_id BIGINT UNSIGNED NOT NULL,reward_name VARCHAR(255) NOT NULL,points_used INT NOT NULL,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL,CONSTRAINT reward_claims_user_id_foreign FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE product_reviews (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,product_id BIGINT UNSIGNED NOT NULL,user_id BIGINT UNSIGNED NOT NULL,rating TINYINT UNSIGNED NOT NULL,body TEXT NOT NULL,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL,UNIQUE KEY review_user_product_unique (product_id,user_id),CONSTRAINT product_reviews_product_id_foreign FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,CONSTRAINT product_reviews_user_id_foreign FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE user_addresses (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,user_id BIGINT UNSIGNED NOT NULL,label VARCHAR(100) NOT NULL DEFAULT 'Rumah',recipient_name VARCHAR(255) NOT NULL,phone VARCHAR(20) NOT NULL,address TEXT NOT NULL,city VARCHAR(100) NOT NULL,province VARCHAR(100) NOT NULL,postal_code VARCHAR(10) NOT NULL,is_default TINYINT(1) NOT NULL DEFAULT 0,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL,CONSTRAINT user_addresses_user_id_foreign FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 INSERT INTO products (name,category,price,badge,rating,sold,stock,image,created_at,updated_at) VALUES
 ('Botol Susu Anti-Kolik','Bayi 0–12 bln',189000,'Terlaris',4.9,3241,25,'https://img.rocket.new/generatedImages/rocket_gen_img_1b9f97762-1766130752655.png',NOW(),NOW()),
