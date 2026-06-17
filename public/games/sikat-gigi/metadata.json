@@ -1,0 +1,6 @@
+{
+  "name": "Dokter Gigi Cilik",
+  "description": "Game edukasi interaktif untuk anak belajar menyikat gigi monster lucu yang penuh noda kuman.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
