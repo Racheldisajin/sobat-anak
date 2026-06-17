@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SobatAnak - Puzzle sobatanak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFF7ED;
+            /* Diubah: overflow-x disembunyikan agar tidak goyang ke samping, 
+               tapi biarkan overflow-y agar elemen tetap bisa diakses jika panjang */
+            overflow-x: hidden; 
+            overflow-y: auto;
+            user-select: none;
+            /* Tambahan: Menghilangkan delay tap di browser mobile */
+            touch-action: manipulation;
+            margin: 0;
+            padding: 0;
+        }
+        .font-fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        /* Tambahan: CSS untuk container scrollable yang akan kita pakai di GameBoard */
+        .scroll-container {
+            -webkit-overflow-scrolling: touch; /* Scroll halus di iOS/Android */
+            scrollbar-width: thin; /* Untuk browser modern */
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
