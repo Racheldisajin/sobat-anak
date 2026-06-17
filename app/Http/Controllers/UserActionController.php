@@ -29,13 +29,32 @@ class UserActionController extends Controller
         return response()->json(['ok'=>true,'cart_count'=>$count,'message'=>'Produk berhasil masuk keranjang akun kamu.']);
     }
 
-    public function playGame(){
+    public function playGame(Request $request){
         $this->requireLogin();
-        $win = random_int(20, 80);
+
+        $score = $request->integer('score');
+        $game = $request->input('game', 'demo');
+
+        if($game === 'tap-tap-kuman'){
+            // Poin dibuat kecil supaya user tetap termotivasi main berkali-kali.
+            // 1 skor = 1 poin, dibatasi supaya aman dan tidak bisa spam poin terlalu besar dari request manual.
+            $safeScore = max(0, min($score, 60));
+            $win = max(1, $safeScore);
+        } else {
+            // Untuk tombol demo game lain yang belum dihubungkan ke game asli.
+            $win = random_int(20, 80);
+        }
+
         $point = UserPoint::firstOrCreate(['user_id'=>$this->userId()],['points'=>1250]);
         $point->points += $win;
         $point->save();
-        return response()->json(['ok'=>true,'points'=>$point->points,'earned'=>$win,'message'=>'Yeay! Kamu dapat '.$win.' poin 🎉']);
+
+        return response()->json([
+            'ok'=>true,
+            'points'=>$point->points,
+            'earned'=>$win,
+            'message'=>'Yeay! Kamu dapat '.$win.' poin 🎉'
+        ]);
     }
 
     public function redeem(Request $request){

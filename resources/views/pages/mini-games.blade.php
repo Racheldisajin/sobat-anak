@@ -21,12 +21,23 @@
 <section class="max-w-7xl mx-auto px-6 md:px-12 py-12">
     <h2 class="section-title font-display mb-8">Daftar <span class="text-teal">Game</span></h2>
     <div class="grid md:grid-cols-3 gap-5">
-        @foreach([['Puzzle Edukatif','🧩','Susun puzzle dan latih konsentrasi si kecil.'],['Memory Card','🃏','Ingat pasangan kartu dengan cepat.'],['TapTap Kuman','🦠','Tap kuman lucu untuk mendapatkan poin.']] as $g)
-        <div class="card p-6 text-center">
-            <div class="text-7xl mb-4">{{ $g[1] }}</div>
-            <h3 class="font-display text-2xl">{{ $g[0] }}</h3>
-            <p class="text-[#6B8A88] my-4">{{ $g[2] }}</p>
-            <button data-play-game class="btn-pill btn-coral mx-auto">Main Sekarang</button>
+        @php
+            $games = [
+                ['title'=>'Puzzle Edukatif','icon'=>'🧩','desc'=>'Susun puzzle dan latih konsentrasi si kecil.','url'=>null,'ready'=>false],
+                ['title'=>'Memory Card','icon'=>'🃏','desc'=>'Ingat pasangan kartu dengan cepat.','url'=>null,'ready'=>false],
+                ['title'=>'TapTap Kuman','icon'=>'🦠','desc'=>'Tap kuman lucu, kejar skor tertinggi, lalu simpan poin ke akun SobatAnak.','url'=>route('mini-games.tap-tap-kuman'),'ready'=>true],
+            ];
+        @endphp
+        @foreach($games as $g)
+        <div class="card p-6 text-center mini-game-card {{ $g['ready'] ? 'is-ready' : '' }}">
+            <div class="text-7xl mb-4">{{ $g['icon'] }}</div>
+            <h3 class="font-display text-2xl">{{ $g['title'] }}</h3>
+            <p class="text-[#6B8A88] my-4">{{ $g['desc'] }}</p>
+            @if($g['ready'])
+                <a href="{{ $g['url'] }}" class="btn-pill btn-coral mx-auto">Main Sekarang</a>
+            @else
+                <button data-play-game class="btn-pill btn-coral mx-auto">Demo Poin</button>
+            @endif
         </div>
         @endforeach
     </div>
@@ -49,6 +60,8 @@
 </section>
 
 <style>
+.mini-game-card.is-ready{position:relative;overflow:hidden}
+.mini-game-card.is-ready:after{content:'Game aktif';position:absolute;top:16px;right:16px;background:#D0F0ED;color:#2A3D3C;border:1px solid #4BBFB0;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:1000}
 
 .mini-reward-cta{
     display:flex;

@@ -19,6 +19,7 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.
 Route::get('/artikel', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/mini-games', [MiniGameController::class, 'index'])->name('mini-games');
+Route::get('/mini-games/tap-tap-kuman', [MiniGameController::class, 'tapTapKuman'])->name('mini-games.tap-tap-kuman');
 Route::get('/ai-chat', [AiChatController::class, 'page'])->name('ai-chat.page');
 Route::get('/ai-chat/new', [AiChatController::class, 'newSession'])->name('ai-chat.new');
 Route::get('/ai-chat/session/{session}', [AiChatController::class, 'page'])->name('ai-chat.session');

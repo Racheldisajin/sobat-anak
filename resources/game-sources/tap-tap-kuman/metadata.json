@@ -1,0 +1,6 @@
+{
+  "name": "Tap-Tap Kuman",
+  "description": "Mini-game edukasi mengetuk kuman untuk mengajarkan anak-anak tentang pentingnya menjaga kebersihan tangan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
