@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Fredoka', 'Quicksand', system-ui, sans-serif;
+  --font-sans: 'Quicksand', system-ui, sans-serif;
+
+  --color-brand-coral: #FF8A65;
+  --color-brand-orange: #F97316;
+  --color-brand-yellow: #FFD54F;
+  --color-brand-skyblue: #4FC3F7;
+  --color-brand-mint: #81C784;
+  --color-text-primary: #1E2939;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-bg-main: #FFF7ED;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+}
+
+.game-shadow { box-shadow: 0px 8px 24px rgba(0,0,0,0.10); }
+.playful-shadow-green { box-shadow: 0px 6px 0px 0px #166534; }
+.playful-shadow-blue { box-shadow: 0px 6px 0px 0px #1E40AF; }
+.playful-shadow-orangeshadow { box-shadow: 0px 6px 0px 0px #C2410C; }
+.playful-shadow-orange { box-shadow: 0px 6px 0px 0px #C2410C; }
+.item-bounce { animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.spin-slow { animation: spin 4s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ============================= */
+/* START SCREEN KERANJANG SEHAT  */
+/* ============================= */
+
+.basket-start-stage {
+  position: relative;
+  width: 260px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-character {
+  position: relative;
+  z-index: 5;
+  width: 150px;
+  height: 100px;
+  animation: basketFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 12px 14px rgba(15, 23, 42, 0.14));
+}
+
+.basket-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.basket-face,
+.basket-face * {
+  transition: all 0.3s ease;
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  animation: orbitRotate 14s linear infinite;
+  pointer-events: none;
+}
+
+.orbit-ring-two {
+  animation-duration: 18s;
+  animation-direction: reverse;
+  transform: scale(0.86);
+}
+
+.orbit-item {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  padding: 7px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.13);
+  animation: iconBob 2.6s ease-in-out infinite;
+}
+
+/* Healthy icons */
+.orbit-item-1 {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -10%);
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.orbit-item-2 {
+  right: 4%;
+  top: 38%;
+  transform: translate(30%, -50%);
+  background: #ecfdf5;
+  border-color: #86efac;
+  animation-delay: 0.25s;
+}
+
+.orbit-item-3 {
+  left: 4%;
+  top: 38%;
+  transform: translate(-30%, -50%);
+  background: #eff6ff;
+  border-color: #93c5fd;
+  animation-delay: 0.5s;
+}
+
+/* Snack icons */
+.orbit-item-4 {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 10%);
+  background: #fff1f2;
+  border-color: #fecdd3;
+  animation-delay: 0.75s;
+}
+
+.orbit-item-5 {
+  right: 10%;
+  bottom: 18%;
+  transform: translate(25%, 20%);
+  background: #fef3c7;
+  border-color: #fde68a;
+  animation-delay: 1s;
+}
+
+.orbit-item-6 {
+  left: 10%;
+  bottom: 18%;
+  transform: translate(-25%, 20%);
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  animation-delay: 1.25s;
+}
+
+@keyframes orbitRotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes iconBob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes basketFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .basket-character {
+    width: 125px;
+    height: 84px;
+  }
+
+  .orbit-item {
+    width: 34px;
+    height: 34px;
+    padding: 5px;
+    border-width: 2px;
+  }
+}
