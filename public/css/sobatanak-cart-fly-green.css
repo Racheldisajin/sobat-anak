@@ -1,0 +1,99 @@
+/* Patch add-only fast cart fly: animasi hanya saat tambah keranjang dan durasi dipercepat */
+
+/* Global green cart fly animation for SobatAnak */
+.sobat-cart-flyer-green{
+    position:fixed !important;
+    z-index:999999 !important;
+    pointer-events:none !important;
+    width:46px !important;
+    height:46px !important;
+    left:0;
+    top:0;
+    border-radius:17px !important;
+    background:linear-gradient(135deg,#62DACD 0%,#36C8B9 54%,#159F92 100%) !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    box-shadow:
+        0 24px 52px rgba(21,159,146,.34),
+        0 10px 22px rgba(42,61,60,.16) !important;
+    border:2px solid rgba(255,255,255,.86) !important;
+    opacity:0;
+    transform:translate3d(0,0,0) scale(.48) rotate(-12deg);
+    filter:drop-shadow(0 12px 20px rgba(34,175,160,.20)) !important;
+}
+.sobat-cart-flyer-green::after{
+    content:'🛒';
+    color:#fff;
+    font-size:21px;
+    line-height:1;
+}
+.sobat-cart-flyer-green::before{
+    content:'';
+    position:absolute;
+    inset:-12px;
+    border-radius:22px;
+    background:rgba(65,199,183,.16);
+    transform:scale(.28);
+    opacity:0;
+}
+.sobat-cart-flyer-green.is-flying{
+    animation:sobatCartFlyGreenSmooth 1.55s cubic-bezier(.16,.84,.19,1) forwards !important;
+}
+.sobat-cart-flyer-green.is-flying::before{
+    animation:sobatCartFlyGreenPulse 1.55s ease forwards !important;
+}
+.sobat-cart-target-pop{
+    animation:sobatCartTargetSoftPop 1s cubic-bezier(.2,1.25,.32,1) both !important;
+    box-shadow:0 0 0 11px rgba(65,199,183,.14),0 16px 36px rgba(34,175,160,.23) !important;
+}
+@keyframes sobatCartFlyGreenSmooth{
+    0%{
+        opacity:0;
+        transform:translate3d(0,0,0) scale(.45) rotate(-12deg);
+    }
+    9%{
+        opacity:1;
+        transform:translate3d(0,-12px,0) scale(1.02) rotate(7deg);
+    }
+    26%{
+        transform:translate3d(calc(var(--fly-x,0px)*.20),-72px,0) scale(1.09) rotate(-7deg);
+    }
+    52%{
+        transform:translate3d(calc(var(--fly-x,0px)*.55),calc(var(--fly-y,0px)*.30 - 88px),0) scale(.98) rotate(10deg);
+    }
+    76%{
+        opacity:1;
+        transform:translate3d(calc(var(--fly-x,0px)*.86),calc(var(--fly-y,0px)*.76 - 24px),0) scale(.72) rotate(-5deg);
+    }
+    100%{
+        opacity:0;
+        transform:translate3d(var(--fly-x,0px),var(--fly-y,0px),0) scale(.25) rotate(0deg);
+    }
+}
+@keyframes sobatCartFlyGreenPulse{
+    0%,14%{opacity:0;transform:scale(.25)}
+    34%{opacity:1;transform:scale(1)}
+    100%{opacity:0;transform:scale(1.55)}
+}
+@keyframes sobatCartTargetSoftPop{
+    0%{transform:scale(1)}
+    28%{transform:scale(1.18) rotate(-7deg)}
+    56%{transform:scale(.97) rotate(5deg)}
+    100%{transform:scale(1) rotate(0)}
+}
+@media(max-width:640px){
+    .sobat-cart-flyer-green{
+        width:40px !important;
+        height:40px !important;
+        border-radius:15px !important;
+    }
+    .sobat-cart-flyer-green::after{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){
+    .sobat-cart-flyer-green.is-flying,
+    .sobat-cart-flyer-green.is-flying::before,
+    .sobat-cart-target-pop{
+        animation:none !important;
+    }
+}

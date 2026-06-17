@@ -1,0 +1,68 @@
+
+/* AI Search SobatAnak polish: animated green status dot */
+.sobat-ai-search{
+  overflow:visible !important;
+}
+.sobat-ai-dot{
+  width:1.05rem !important;
+  height:1.05rem !important;
+  position:relative !important;
+  isolation:isolate !important;
+  background:linear-gradient(135deg,#42D988,#80E7A7) !important;
+  box-shadow:
+    0 0 0 .78rem rgba(103,217,140,.16),
+    0 0 22px rgba(103,217,140,.55) !important;
+  animation:sobatAiDotBreath 1.65s ease-in-out infinite !important;
+}
+.sobat-ai-dot::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-13px !important;
+  border-radius:999px !important;
+  background:rgba(103,217,140,.18) !important;
+  z-index:-1 !important;
+  animation:sobatAiDotSoftWave 1.65s ease-out infinite !important;
+}
+.sobat-ai-dot::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-7px !important;
+  border-radius:999px !important;
+  border:2px solid rgba(103,217,140,.42) !important;
+  animation:sobatAiDotRingStrong 1.65s ease-out infinite !important;
+}
+.sobat-ai-search:focus-within .sobat-ai-dot{
+  background:linear-gradient(135deg,#22C775,#95F2B4) !important;
+  animation:sobatAiDotFocus 1.05s ease-in-out infinite !important;
+}
+.sobat-ai-search:focus-within .sobat-ai-dot::before{
+  animation-duration:1.05s !important;
+}
+.sobat-ai-search:focus-within .sobat-ai-dot::after{
+  animation-duration:1.05s !important;
+}
+@keyframes sobatAiDotBreath{
+  0%,100%{transform:scale(1);filter:saturate(1)}
+  50%{transform:scale(1.14);filter:saturate(1.25)}
+}
+@keyframes sobatAiDotFocus{
+  0%,100%{transform:scale(1.08)}
+  50%{transform:scale(1.22)}
+}
+@keyframes sobatAiDotSoftWave{
+  0%{opacity:.78;transform:scale(.72)}
+  70%{opacity:.18;transform:scale(1.45)}
+  100%{opacity:0;transform:scale(1.65)}
+}
+@keyframes sobatAiDotRingStrong{
+  0%{opacity:.95;transform:scale(.68)}
+  100%{opacity:0;transform:scale(1.9)}
+}
+
+/* Make browser/tab icon and AI search look cleaner on small screen */
+@media(max-width:560px){
+  .sobat-ai-dot{width:.92rem !important;height:.92rem !important}
+}
+@media(prefers-reduced-motion:reduce){
+  .sobat-ai-dot,.sobat-ai-dot::before,.sobat-ai-dot::after{animation:none !important}
+}
