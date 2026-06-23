@@ -1,0 +1,6 @@
+{
+  "name": "Keranjang Sehat Sobat Anak",
+  "description": "Mini-game 2D menangkap makanan sehat dan menghindari jajanan tidak sehat untuk edukasi anak-anak Sobat Anak.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

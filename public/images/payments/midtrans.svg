@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="midtrans">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <circle cx="40" cy="60" r="8" fill="#02A9D6"/><circle cx="62" cy="60" r="8" fill="#02A9D6"/><circle cx="84" cy="60" r="8" fill="#02A9D6"/>
+  <text x="108" y="72" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="34" fill="#02A9D6">midtrans</text>
+
+</svg>

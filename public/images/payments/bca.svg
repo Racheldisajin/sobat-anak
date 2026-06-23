@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="bca">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <g transform="translate(20 23)">
+    <rect x="0" y="0" width="62" height="56" rx="14" fill="#0A5DB8"/>
+    <circle cx="31" cy="18" r="8" fill="#fff" opacity=".95"/>
+    <circle cx="19" cy="31" r="8" fill="#fff" opacity=".95"/>
+    <circle cx="43" cy="31" r="8" fill="#fff" opacity=".95"/>
+    <circle cx="31" cy="44" r="8" fill="#fff" opacity=".95"/>
+  </g>
+  <text x="96" y="72" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="44" fill="#0A5DB8">BCA</text>
+
+</svg>

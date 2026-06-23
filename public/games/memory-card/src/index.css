@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #FFF5E6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-comic {
+  font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 200, 100, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Prevent text selection for better game experience */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  button, .cursor-pointer {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Font sizes for responsiveness */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+p {
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+}
+
+/* Card flip animation base */
+.card-container {
+  perspective: 1000px;
+}
+
+/* Game page overflow handling */
+.game-page {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Animation utilities */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #f97316 0%, #ef4444 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect for matched cards */
+.card-matched-glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.6),
+              0 0 40px rgba(34, 197, 94, 0.4),
+              0 0 60px rgba(34, 197, 94, 0.2);
+}
+
+/* Pulse animation for timer warning */
+@keyframes pulse-warning {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-warning {
+  animation: pulse-warning 0.5s ease-in-out infinite;
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="cimb">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <rect x="24" y="32" width="50" height="50" rx="10" fill="#D71920"/>
+  <path d="M37 45 L61 57 L37 69 Z" fill="#fff"/>
+  <text x="88" y="58" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="28" fill="#D71920">CIMB</text>
+  <text x="88" y="82" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="24" fill="#D71920">NIAGA</text>
+
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="bsi">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <text x="26" y="72" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="46" fill="#00A9A5">BSI</text>
+  <path d="M116 34 L126 56 L150 56 L131 70 L139 94 L116 79 L93 94 L101 70 L82 56 L106 56 Z" fill="#F6B800"/>
+
+</svg>

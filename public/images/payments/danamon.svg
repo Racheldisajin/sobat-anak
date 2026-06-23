@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="danamon">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <circle cx="54" cy="60" r="32" fill="#F58220"/>
+  <path d="M34 60 C46 38 63 38 75 60 C63 82 46 82 34 60Z" fill="#fff" opacity=".92"/>
+  <text x="96" y="70" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="33" fill="#0072BC">Danamon</text>
+
+</svg>

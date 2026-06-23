@@ -1,0 +1,8 @@
+/* Smooth page refresh / navigation for SobatAnak */
+@media (prefers-reduced-motion: reduce){
+    #sa-page-loader,#sa-page-shell,.sa-loader-logo,.sa-loader-dots i{animation:none!important;transition:none!important}
+}
+@media (max-width: 640px){
+    .sa-loader-card{padding:14px 16px;font-size:13px;gap:10px}
+    .sa-loader-logo{width:34px;height:34px}
+}

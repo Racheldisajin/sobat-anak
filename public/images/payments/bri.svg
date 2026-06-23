@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="bri">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <rect x="22" y="28" width="64" height="64" rx="16" fill="#00529C"/>
+  <path d="M42 44 h24 q12 0 12 12 q0 9-8 12 l10 14 H65 L56 70 H52 v12 H42 Z M52 56 v6 h14 q4 0 4-3 q0-3-4-3 Z" fill="#fff"/>
+  <text x="102" y="74" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="45" fill="#00529C">BRI</text>
+
+</svg>

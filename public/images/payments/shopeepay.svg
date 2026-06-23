@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="shopeepay">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <circle cx="58" cy="60" r="34" fill="#EE4D2D"/>
+  <path d="M42 52 h32 l-4 32 H46 Z" fill="#fff"/>
+  <path d="M48 52 q10-18 20 0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <text x="104" y="55" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="30" fill="#EE4D2D">Shopee</text>
+  <text x="104" y="82" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="27" fill="#EE4D2D">Pay</text>
+
+</svg>

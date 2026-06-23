@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="permata">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <circle cx="55" cy="60" r="30" fill="#E53935"/>
+  <path d="M37 60 q18-24 36 0 q-18 24-36 0Z" fill="#fff" opacity=".94"/>
+  <text x="98" y="55" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="28" fill="#E53935">Permata</text>
+  <text x="99" y="81" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="20" fill="#2B5D6B">Bank</text>
+
+</svg>

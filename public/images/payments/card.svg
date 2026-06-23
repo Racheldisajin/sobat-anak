@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="card">
+  <rect width="220" height="120" rx="24" fill="#ffffff"/>
+  
+  <rect x="26" y="34" width="84" height="56" rx="12" fill="#0EA5E9"/>
+  <rect x="26" y="48" width="84" height="12" fill="#075985"/>
+  <rect x="42" y="72" width="30" height="8" rx="3" fill="#fff" opacity=".95"/>
+  <circle cx="148" cy="62" r="22" fill="#EB001B" opacity=".88"/>
+  <circle cx="172" cy="62" r="22" fill="#F79E1B" opacity=".88"/>
+
+</svg>
